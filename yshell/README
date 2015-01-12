@@ -1,1 +1,101 @@
-README
+Description of yshell.cpp: 
+Program reads commands from stdin and write output to stdout, all errors redirected to stderr 
+  a) each line read by shell is parsed into words by splitting using space characters, with any # of spaces between words. 
+     i) note that there may be leading/trailing spaces 
+  b) the first word on any line is a command to be simulated & the rest are operands to that command
+  c) The commands modify an inode tree, where each "inode" is either a file or a directory. Files contain data and directories contain inodes.
+     i)inodes is specified by means of a pathname, similar to a filesystem.
+  
+  Every inode has 3 attributes:
+  		1) an inode number
+  		2) contents
+  		3) size 
+  
+  Note that the -@ option enables debug output, written to stderr
+  
+  Notable commands: 
+  
+  # string
+    If first non-space character on a line is a hash, line is a comment and is ignored
+  
+  cat pathname...
+    The contents of each file is copied to stdout 
+    
+  cd [pathname]
+    The current directory is set to the pathname given. If no pathname is given, root directory is used. 
+    
+  echo [words...]
+    The string, is echoed to stdout on a line by itself
+    
+  exit [status]
+    exit the program with the given status
+    
+  ls [pathname]
+    A description of the files or directories are printed to stdout
+    
+  lsr [pathname]
+    Like ls, but a recursive depth-first preorder traversal is done for subdirectories.
+    
+  make pathname [words..]
+    File specified is created and rest of the words are put in that file. If file already exists, contents are replaced
+    
+  mkdir pathname
+    A new directory is created. 
+    
+  prompt string
+    set the prompt to the words specified on the command line
+  
+  pwd
+     prints current working directory
+     
+  rm pathname
+    The file or directory is deleted 
+    
+  rmr pathname
+     Recursive removal done, using depth-first postorder traversal. 
+     
+
+Sample run: 
+%pwd	
+/
+%ls
+/:
+	1	2  .
+	1	2  ..
+%make foo this is a test
+%make bar test a is this
+%ls
+/:
+	1	4  .
+	1	4  ..
+	3	14 bar
+	2	14 foo
+%cat food
+cat: food: No such file or directory
+%cat foo
+this is a test
+%echo 3 helloworld
+3 helloworld
+%prompt ->
+-> rm bar
+->make baz foo bar baz
+->mkdir test
+->prompt %
+% ls /
+/:
+	1 	5  .
+	1	5  ..
+	4	11 baz
+	2	14 foo
+	5	 2 test
+%cd test
+%pwd
+/test
+
+
+Source description:
+debug - useful in tracing code. 
+util - place to park various random functions
+yshell - scans options, and loops reading & executing commands
+commands - major execution engine
+inode - the filesystem/main data structure. 
