@@ -1,10 +1,4 @@
-// $Id: commands.h,v 1.3 2013-06-18 18:02:16-07 - - $
-/*This program was completed using pair programming.
-Partner:  Andrew Lien (ahlien@ucsc.edu)
-Partner:  Daniel Jou (djou@ucsc.edu)
-CMPS 109
-Assignment 1
-*/
+
 #ifndef __COMMANDS_H__
 #define __COMMANDS_H__
 

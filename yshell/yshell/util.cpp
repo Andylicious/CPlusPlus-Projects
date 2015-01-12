@@ -1,10 +1,4 @@
-// $Id: util.cpp,v 1.4 2013-07-08 01:24:30-07 - - $
-/*This program was completed using pair programming.
-Partner:  Andrew Lien (ahlien@ucsc.edu)
-Partner:  Daniel Jou (djou@ucsc.edu)
-CMPS 109
-Assignment 1
-*/
+
 #include <cstdlib>
 #include <unistd.h>
 

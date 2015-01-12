@@ -1,10 +1,4 @@
-// $Id: util.h,v 1.1 2013-06-18 17:32:08-07 - - $
-/*This program was completed using pair programming.
-Partner:  Andrew Lien (ahlien@ucsc.edu)
-Partner:  Daniel Jou (djou@ucsc.edu)
-CMPS 109
-Assignment 1
-*/
+
 //
 // util -
 //    A utility class to provide various services not conveniently

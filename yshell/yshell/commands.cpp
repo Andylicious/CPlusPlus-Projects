@@ -1,10 +1,5 @@
 // $Id: commands.cpp,v 1.52 2013-07-08 01:34:25-07 - - $
-/*This program was completed using pair programming.
-Partner:  Andrew Lien (ahlien@ucsc.edu)
-Partner:  Daniel Jou (djou@ucsc.edu)
-CMPS 109
-Assignment 1
-*/
+
 #include "commands.h"
 #include "trace.h"
 

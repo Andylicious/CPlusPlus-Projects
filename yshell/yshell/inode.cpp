@@ -1,11 +1,4 @@
-// $Id: inode.cpp,v 1.18 2013-07-08 01:24:29-07 - - $
 
-/*This program was completed using pair programming.
-Partner:  Andrew Lien (ahlien@ucsc.edu)
-Partner:  Daniel Jou (djou@ucsc.edu)
-CMPS 109
-Assignment 1
-*/
 #include <cassert>
 #include <iostream>
 

@@ -1,10 +1,4 @@
-// $Id: yshell.cpp,v 1.7 2013-07-08 12:00:09-07 - - $
-/*This program was completed using pair programming.
-Partner:  Andrew Lien (ahlien@ucsc.edu)
-Partner:  Daniel Jou (djou@ucsc.edu)
-CMPS 109
-Assignment 1
-*/
+
 #include <cstdlib>
 #include <iostream>
 #include <string>
