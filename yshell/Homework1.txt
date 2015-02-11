@@ -1,0 +1,50 @@
+Problem 1: Given - An array containing an increasing sequence of
+integers. The new array starts somewhere in the middle of the array and wraps
+around Example: [68. 73, 75, 122, 16, 19, 33, 36, 38, 55, 59] Goal:
+Design an algorithm to find the last ID (the largest integer) in the
+list in O(logn) time
+
+3 5 4 2  | 1 5 2 3 1
+
+3 5 | 4 2 | 1 5 | 2 3 | 1 
+
+3 5 | 2 4 | 1 5 | 2 3 | 1
+
+2 3 4 5 |1 2 3 5 | 1  
+
+1 2 3 3 4 5 5 | 1
+ 
+1 1 1 1 1 2 3 3 4 5 5
+1 1 - yes, add 2 to candidate 1
+1 1 - yes, add 2 to candidate 1
+1 2 - no, add 1 to candidate 1 and 2
+2 3 - no, add 1 to candidate 2 and 3 
+3 3 - yes, add 2 to candidate 3
+4 5 - no, 
+
+
+Let L be the increasing sequence of integers of size n with L[0] starting
+somewhere in the middle of the array and wraps around, let's call it the "wrapped" list. Let L[i] denote the values of the distinct integer ID numbers with i being the indices. The basic observation is this: if the value of list L starts somewhere, but not exactly, in the middle of the array, then the largest integer is located somewhere, but not exactly, in the middle of the wrapped list. 
+
+If the wrapped list is divided in half, then the last ID will be located somewhere to the left or the right of the list. 
+
+	Case 1: The last ID is located to the left of L[n/2]
+		Example: [7,8,9,10,11,| 1,2,3,4,5,]
+			Through a binary search, we can locate the last ID in log(n) time. 
+	Case 2: The last ID is located to the right of L[n/2]
+		Example: [7,8,9,10,11,| 12,1,2,3,4,5]
+			Through a binary search, we can locate the last ID in log(n) time.
+	To eliminate the case where 
+	
+	Claim: If we compare the first element of the first half with the first element of the second half, then we can pinpoint where the largest ID is. 
+	
+	
+	
+	Algorithm: 
+	
+	int findID(L,n)
+	 #base case
+	 	if n = 1  //if size of the list is 1, we've found the largest ID 
+	 		return SOMETHING BLAH BLAH
+	 #divide the list until conquer
+	 	
