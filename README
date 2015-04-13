@@ -1,0 +1,1 @@
+This program involves overloading basic integer operators to perform arbitrary precision integer arithmetic in the style of dc(1). This program showcases explicit memory management using new and delete, and also eliminates memory leaks.
